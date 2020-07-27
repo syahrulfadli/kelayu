@@ -1,0 +1,27 @@
+{
+  "name": "kelayu",
+  "version": "1.0.0",
+  "description": "Hugo Theme for Cassual Blogger",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/syahrulfadli/kelayu.git"
+  },
+  "keywords": [
+    "Hugo",
+    "Themes"
+  ],
+  "author": "Syahrul Fadli",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/syahrulfadli/kelayu/issues"
+  },
+  "homepage": "https://github.com/syahrulfadli/kelayu#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.1.0"
+  }
+}
