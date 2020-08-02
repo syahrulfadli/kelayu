@@ -1,0 +1,68 @@
+
+{{ define "main" }}
+<div class="nav-dummy"></div>
+<div class="single-wrapper">
+<section id="main">
+  <h4 class="date-single weight4"> {{ .Date.Format "Monday January 2, 2006" }} </h4>
+  <h1 class="title-single gigantic-title weight3">{{ .Title }}</h1>
+  <p class="excerpt">{{ .Params.excerpt }}</p>
+  {{ with .Params.tags }}
+  {{ range . }}
+  <span class="tags">
+  <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+  </span>
+  {{ end }}
+  {{ end }}
+  <div class="space"></div>
+  <div class="card-meta">
+  {{ with .Params.series }}
+  <ul id="series">
+    {{ range . }}
+      <li><a href="{{ "series" | absURL}}/{{ . | urlize }}">{{ . }}</a> </li>
+    {{ end }}
+  </ul>
+  {{ end }}
+  {{ partial "articles/author.html" . }}
+    <span id="wordcount"> {{ .WordCount }} Words • {{ .ReadingTime }} min read</span>
+  </div>
+  <span>
+    {{ with .Params.authors }}
+      <div class="card-meta co-authors">        
+        {{ $co := . }}
+        {{ if lt 1 $co }}
+        Coauthors:
+          {{ else }}
+        {{ end }}
+        {{ range after 1 . }}
+          {{ $colink := . }}
+          <a href="{{ "authors" | absURL }}/{{ . | urlize }}"><span>{{ . }} </span></a> 
+        {{ end }}
+     </div>
+    {{ end }}
+  </span>
+  <div>
+        <article id="content">
+           {{ .Content }}
+        </article>
+  </div>
+</section>
+<aside id="meta">
+    <div class="nextprev">
+        {{ with .PrevInSection }}
+        <div class="prev">
+        <span>Previous article</span>
+        <br/>
+          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+          </div>
+        {{ end }}
+        {{ with .NextInSection }}
+        <div class="next">
+        <span>Next article</span>
+        <br/>
+          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+          </div>
+        {{ end }}
+    </div>
+</aside>
+</div>
+{{ end }}

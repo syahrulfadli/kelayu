@@ -1,0 +1,14 @@
+.hero{
+    background: $primary;
+    color:$white;
+    height: 51vw;
+    h1 {
+    line-height: normal;
+    margin: 0;
+    }
+}
+.greet {
+    height: 50vw;
+    display: flex;
+    align-items: center;
+}

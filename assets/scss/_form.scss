@@ -1,0 +1,17 @@
+.search-form{
+    order:3;
+    flex-grow: 0;
+}
+input {
+    border: 1px solid $hover-border;
+    padding: 7px;
+    font-family: Roboto, sans-serif;
+    background-color: $hover-bg;
+}
+input:hover{
+    background-color: $white;
+}
+input:focus{
+    border-color: $accent;
+    background-color: $white;
+}

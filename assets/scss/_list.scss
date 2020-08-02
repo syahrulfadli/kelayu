@@ -1,0 +1,50 @@
+.container{
+    width: 100%;
+}
+.container::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+.card{
+    width: 400px / 1200px *100%;
+    overflow: hidden;
+    height: 550px;
+    float: left;
+    p{
+        font-size: 16px;
+        line-height: 27px;
+    }
+    h2{
+        font-size: 21px;
+        line-height: 35px;
+        font-weight: 300;
+    }
+    a{
+        color:$black;
+    }
+}
+.card-wrapper{
+    box-sizing: border-box;
+    margin:25px;
+}
+.cover-image{
+    overflow: hidden;
+    img{
+        width: 100%;
+    }
+}
+.card-meta{
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    color:$secondary-text;
+    a{
+        color: $secondary-text;
+    }
+    span{
+        margin:0 10px;
+    }
+}
+.stretched-link {  
+}

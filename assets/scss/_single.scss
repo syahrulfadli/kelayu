@@ -1,0 +1,24 @@
+.title-single{
+    margin:0;
+}
+.date-single{
+        margin-bottom:0 ;
+}
+.excerpt{
+    margin-top:0;
+}
+.nextprev {
+    border-top:1px solid $hover-border;
+    margin: 35px 0;
+    padding:25px 0;
+    display: inline-block;
+    width: 100%;
+}
+.prev{
+    float: right;
+    text-align: right;
+    width: 50%;
+}
+.next{
+    width: 50%;
+}

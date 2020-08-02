@@ -1,11 +1,8 @@
-{{ define "main" }}
-<div class="nav-dummy"></div>
-<div class="wrapper">
+<div class="container">
     {{ range .Paginator.Pages }}
         {{- partial "articles/card.html" . -}}
     {{ end }}
 </div>
-<div class="pagination-wrapper"> 
+<div class="pagination-wrapper">
 {{ template "_internal/pagination.html" . }}
 </div>
-{{ end }}

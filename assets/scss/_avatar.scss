@@ -1,0 +1,28 @@
+.avatar-link {
+    display: flex;
+    align-items: center;
+    img{
+        border-radius: 100%;
+    }
+    @media screen and (max-width:480px) {
+        img{
+            display:none;
+        }
+    }
+}
+.co-authors {
+    margin-left: 50px   ;
+    span{
+        border:1px solid $hover-border;
+        border-radius:20px;
+        padding:5px 17px;
+        line-height: normal;
+        margin:0 5px;
+    }
+    span:hover{
+        background: $hover-bg;
+    }
+    @media screen and (max-width:480px) {
+        margin-top: 20px;
+    }
+}

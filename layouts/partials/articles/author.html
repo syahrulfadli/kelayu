@@ -1,0 +1,20 @@
+{{ $page := . }}
+{{ $authors := partialCached "func/getauthor" . .File.UniqueID }}
+    {{ with $author := index $authors 0 }}
+            <a href="{{ .URL }}" class="avatar-link">
+                {{ with .avatar }}
+                        {{- $images := . -}}
+                        {{- with $page.Site.GetPage "section" "upload" -}}
+                            {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                                {{- $image := .Resize "40x40" -}}
+    
+                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}" title="{{ with $page.Params.authors }}{{ range . }}{{ . }} {{ end }}{{ end }}">
+                        
+                            {{- end -}}
+                        {{- end -}}
+                {{ end }}
+                {{ with .name }}
+                <span>{{.}}</span>
+                {{ end }}
+            </a>
+    {{ end }}

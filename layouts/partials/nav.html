@@ -1,0 +1,19 @@
+<nav class="nav">
+    <div class="nav-wrapper">
+    <a class="brand" href="/" title="website logo">
+    <img src="/images/gunung.svg"/ alt="Logo {{.}}">
+    </a> 
+    <ul>
+        {{ with .Site.Menus.main }}
+        {{ range . }}
+            <li><a class="muted" href="{{ .URL | relLangURL }}">{{ .Name }}</a></li>
+        {{ end }}
+    {{ end }}
+    </ul>
+    <div class="search-form">
+        <form method="POST" action="/">
+        <input type="text" name="search" placeholder="Search here...">
+        </form>
+    </div>
+</div> 
+</nav>

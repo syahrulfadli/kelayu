@@ -1,0 +1,57 @@
+@mixin mediascreen480($val1,$val2) {
+    @media screen and (max-width:480px){
+        font-size: $val1;
+        line-height: $val2;
+    }
+}
+h1{
+    font-size: 43px;
+    line-height: 68px;
+    @include mediascreen480(33px,64px);
+}
+h2{
+    font-size: 34px;
+    line-height: 54px;
+    @include mediascreen480(26px,41px);
+}
+h3{
+    font-size: 27px;
+    line-height: 44px;
+    @include mediascreen480(20px,32px);
+}
+h4{
+    font-size: 21px;
+    line-height: 35px;
+    @include mediascreen480(16px,26px);
+}
+.secondary{
+    font-size: 17px;
+    line-height: 30px;
+    @include mediascreen480(13px,22px )
+}
+.gigantic-title{
+    font-size: 55px;
+    line-height: 85px;
+    @include mediascreen480(42px,64px )
+}
+body{
+    font-family: Roboto, sans-serif;
+    font-size: 21px;
+    line-height: 35px;
+    @include mediascreen480(16px,26px );
+}
+.highlight{
+    pre{
+    overflow: auto;
+    padding: 20px;
+    }
+}
+.weight3{
+    font-weight: 300;
+}
+.weight4{
+    font-weight: 400;
+}
+.weight7{
+    font-weight: 700;
+}

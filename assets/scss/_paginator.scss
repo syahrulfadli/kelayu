@@ -1,0 +1,21 @@
+.pagination{
+    list-style: none;
+    display: flex;
+    margin:0 auto;
+    padding:0;
+    li {
+        text-align: center;
+    }
+    li a{
+        background: $accent;
+        border:1px solid $accent;
+        color: $black;
+        padding:7px 15px;
+    }
+    li a:hover{
+        background: $white;
+    }
+}
+.pagination-wrapper{
+    display: flex;
+}

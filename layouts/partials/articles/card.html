@@ -1,0 +1,38 @@
+{{ $page := . }}
+<div class="card">
+    <div class="card-wrapper">
+        {{- with $page.Params.cover -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image1 := .Fit "400x250 q100" -}}
+                    {{- $image2 := .Fit "200x150 q90" -}}
+                    <div class="cover-image">
+                        <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
+                            <img srcset="
+                            {{ $image2.RelPermalink }} 800w,
+                            {{ $image1.RelPermalink }} 1366w,  
+                            " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
+                        </a>
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+        <h2><a href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
+        <div class="card-meta">
+            {{ partial "articles/author.html" . }}
+            <span>•</span>
+            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        </div>
+        <p>
+            {{.Params.excerpt}}
+        </p>
+        {{ with .Params.tags }}
+            {{ range . }}
+                <span class="tags">
+                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}" title="{{.}}">{{ . }}</a>
+                </span>
+            {{ end }}
+        {{ end }}
+    </div>
+</div>

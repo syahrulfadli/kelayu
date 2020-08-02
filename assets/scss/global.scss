@@ -1,0 +1,42 @@
+@import 'var';
+@import 'typography';
+@import 'nav';
+@import 'footer';
+@import 'paginator';
+@import 'list';
+@import 'avatar';
+@import'tags';
+@import 'form';
+@import 'single';
+@import 'header';
+
+body{
+    color:$black;
+    margin:0;
+}
+a{
+    color:$accent;
+    text-decoration: none;
+    :hover{
+        text-decoration: underline;
+    }
+}
+.wrapper{
+    margin:0 auto;
+    width: 100%;
+    max-width: 1200px;
+}
+.single-wrapper{
+    width: 100%;
+    max-width: 980px;
+    margin:0 auto
+}
+.space{
+    margin:35px 0 0;
+}
+.flex{
+    display: flex;
+}
+.align-center{
+    align-items: center;
+}
