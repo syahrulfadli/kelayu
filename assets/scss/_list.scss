@@ -1,5 +1,14 @@
 .container{
     width: 100%;
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    margin-top:25px;
+    @media screen and (max-width:1100px){
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media screen and (max-width:735px){
+        grid-template-columns: repeat(1, 1fr);
+    }
 }
 .container::after{
     content: "";
@@ -7,10 +16,9 @@
     display: table;
 }
 .card{
-    width: 400px / 1200px *100%;
+    grid-column-start: auto;
     overflow: hidden;
-    height: 550px;
-    float: left;
+    transition: $tr-normal;
     p{
         font-size: 16px;
         line-height: 27px;
@@ -24,9 +32,13 @@
         color:$black;
     }
 }
+.card:hover{
+    box-shadow: $shadow-md;
+}
 .card-wrapper{
     box-sizing: border-box;
-    margin:25px;
+    padding:25px;
+    position: relative;
 }
 .cover-image{
     overflow: hidden;
@@ -46,5 +58,10 @@
         margin:0 10px;
     }
 }
-.stretched-link {  
+.link {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
 }

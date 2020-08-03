@@ -22,14 +22,14 @@ a{
     }
 }
 .wrapper{
-    margin:0 auto;
+    margin:25px auto 0;
     width: 100%;
     max-width: 1200px;
 }
 .single-wrapper{
     width: 100%;
     max-width: 980px;
-    margin:0 auto
+    margin:0 auto;
 }
 .space{
     margin:35px 0 0;
@@ -39,4 +39,9 @@ a{
 }
 .align-center{
     align-items: center;
+}
+#main,#meta{
+    @media screen and(max-width:1025px){
+        margin:25px;
+    }
 }

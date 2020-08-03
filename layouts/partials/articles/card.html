@@ -1,6 +1,8 @@
 {{ $page := . }}
 <div class="card">
     <div class="card-wrapper">
+        <div class="stretched">
+            <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
         {{- with $page.Params.cover -}}
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
@@ -34,5 +36,6 @@
                 </span>
             {{ end }}
         {{ end }}
+        </div>
     </div>
 </div>
