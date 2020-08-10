@@ -1,1 +1,8 @@
 pygmentsstyle: 'monokai'
+
+permalinks:
+  post: /:filename/
+  info: /:filename/
+
+markup.goldmark.renderer:
+  unsafe: true

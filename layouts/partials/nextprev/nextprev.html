@@ -1,0 +1,16 @@
+<div class="nextprev">
+    {{ with .PrevInSection }}
+    <div class="prev">
+    <span>Previous article</span>
+    <br/>
+      <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
+      </div>
+    {{ end }}
+    {{ with .NextInSection }}
+    <div class="next">
+    <span>Next article</span>
+    <br/>
+      <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
+      </div>
+    {{ end }}
+</div>

@@ -1,7 +1,15 @@
 {{ define "main" }}
-<div class="nav-dummy"></div>
 {{ partial "header.html" . }}
 <div class="wrapper">
+<p>Artikel terbaru</p>
 {{ partial "articles/list.html" . }}
+<p style="text-align: center;"><a href="/post" title="artikel lainnya"><button class="more">Lihat artikel lainnya</button></a></p>
+
+<ul>
+    {{ range .Site.Taxonomies.tags.hugo }}
+        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+    {{ end }}
+</ul>
+
 </div>
 {{ end }}

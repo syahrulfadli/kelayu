@@ -55,3 +55,94 @@ body{
 .weight7{
     font-weight: 700;
 }
+code{
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 17px;
+    background-color: $shade;
+    padding: 3px 7px;
+    border-radius: 15px;
+    border:1px solid $shade;
+}
+a code,code a{
+    text-decoration: underline;
+    color: $black;
+}
+pre code{
+    font-family: inherit;
+    font-weight: inherit;
+    border:inherit;
+    border-radius: inherit;
+    padding: inherit;
+    background: transparent;
+}
+kbd{
+    font-family: Montserrat,'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    background-color: $light;
+    border:1px solid $grey;
+    border-bottom-width: 2px;
+    border-radius: 5px;
+    padding:4px 5px;
+    kbd{
+        padding:1px 5px;
+    }
+}
+blockquote{
+    border:1px solid $shade;
+    position: relative;
+    p{
+        margin:21px;
+    }
+}
+blockquote::before{
+    content: '"';
+    position: absolute;
+    top:4px;
+    left:1px;
+    font-size: 50px;
+    font-weight: 700;
+    color: $grey;
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+blockquote::after{
+    content: '"';
+    position: absolute;
+    bottom:-19px;
+    right:1px;
+    font-size: 50px;
+    font-weight: 700;
+    color: $grey;
+    right: 0;
+    font-family: Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+table{
+    border-collapse: collapse;
+    width: 100%;
+}
+table, th, td {
+    border: 1px solid $grey;
+  }
+  td{
+      padding:0 10px;
+  }
+hr{
+    border-width: 0px;
+}
+.footnotes{
+    border:1px solid $shade;
+    margin-top:55px;
+    position: relative;
+    a{
+        text-decoration: underline;
+    }
+}
+.footnotes::before {
+    content: "Catatan/Referensi";
+    position: absolute;
+    top: -15px;
+    font-weight: 700;
+    left: 15px;
+    background: $light;
+    padding:0 15px;
+}

@@ -1,9 +1,6 @@
 {{ $page := . }}
 <div class="card">
-    <div class="card-wrapper">
-        <div class="stretched">
-            <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
-        {{- with $page.Params.cover -}}
+    {{- with $page.Params.cover -}}
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
@@ -20,11 +17,12 @@
                 {{- end -}}
             {{- end -}}
         {{- end -}}
+    <div class="card-wrapper">
+        <div class="stretched">
+            <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
         <h2><a href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
         <div class="card-meta">
-            {{ partial "articles/author.html" . }}
-            <span>•</span>
-            <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+            <span>{{ partial "articles/author.html" . }}</span><span>{{ .Date.Format "Jan 2, 2006" }}</span>
         </div>
         <p>
             {{.Params.excerpt}}

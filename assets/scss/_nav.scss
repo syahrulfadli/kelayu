@@ -1,47 +1,55 @@
 %navigation {
     ul li{
         list-style:none;
-        float: left;
+        display: inline-block;
         font-size:16px;
     }
     ul li a{
         padding:0 10px;
-        height: 65px;
+        height: 55px;
         display: flex;
         align-items: center;
+        color: $black;
     }
 }
 
 .nav{
-    background:$white   ;
-    width: 100%;
-    position: fixed;    
+    width: 100%; 
     height: 65px;
-    box-shadow: $shadow-md;
     top:0;
+    display: flex;
+    align-items: center;
     left: 0 ;
     z-index: 9999;
     a{
-        color: $secondary-text;
+        color: $black;
     }
 }
 .nav-wrapper{
     width: 100%;
     max-width: 1200px;
+    border-bottom: 1px solid $shade;
     display: flex;
     height: 65px;
     align-items: center;
     margin:0 auto;
+    position: relative;
     @extend %navigation;
+    ul li a{
+        color:$grey;
+        font-weight: 500;
+    }
     ul li a:hover{
-        background:$hover-bg;
+        color:$black;
     }
     ul{
         order:2;
         flex-grow: 1;
+        height: 55px;
+        overflow: auto;
     }
-    @media screen and(max-width:1025px){
-        margin:0 25px;
+    @media screen and (max-width:1024px){
+        margin:0 auto;
     }
 }
 .brand{
@@ -51,9 +59,43 @@
     flex-grow: 0;
     display: flex;
 }
-.nav-dummy{
+.nav-content{
     position: relative;
     width: 100%;
-    height: 65px;
+    height: 50px;
+    display: flex;
+    margin:0 15px;
+    align-items: center;
 
+}
+.search-form{
+    order:3;
+    flex-grow: 0;
+    display: none;
+}
+.search-toggle {
+    order: 4;
+    padding: 0 0 0 10px;;
+    height: 26px;
+    background: 0 0;
+    font-size: 27px;
+    color:$grey;
+    z-index: 1;
+    @media screen and (max-width:600px){
+        margin: 0px 10px 6px 0;
+    }
+}
+.search-toggle:hover,:focus{
+    color: $black;
+    border-color: transparent;;
+}
+#search-form input {
+    @media screen and (max-width:600px) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    }
 }

@@ -1,6 +1,5 @@
 
 {{ define "main" }}
-<div class="nav-dummy"></div>
 <div class="single-wrapper">
 <section id="main">
   <h4 class="date-single weight4"> {{ .Date.Format "Monday January 2, 2006" }} </h4>
@@ -40,29 +39,18 @@
      </div>
     {{ end }}
   </span>
-  <div>
-        <article id="content">
+  <div class="article-wrapper">
+        <article class="artikel" id="content">
            {{ .Content }}
         </article>
   </div>
 </section>
 <aside id="meta">
-    <div class="nextprev">
-        {{ with .PrevInSection }}
-        <div class="prev">
-        <span>Previous article</span>
-        <br/>
-          <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
-          </div>
-        {{ end }}
-        {{ with .NextInSection }}
-        <div class="next">
-        <span>Next article</span>
-        <br/>
-          <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
-          </div>
-        {{ end }}
-    </div>
+   {{ partial "nextprev/nextprev.html" . }}
+</aside>
+<aside id="meta">
+
+{{ partial "disqus.html" . }}
 </aside>
 </div>
 {{ end }}

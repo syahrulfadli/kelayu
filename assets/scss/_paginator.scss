@@ -2,19 +2,36 @@
     list-style: none;
     display: flex;
     margin:0 auto;
+    border:1px solid $shade;
     padding:0;
+    border-radius: 5px;
+    overflow: hidden;
+    font-weight: 500;
     li {
         text-align: center;
     }
     li a{
-        background: $accent;
-        border:1px solid $accent;
+        background: $light;
         color: $black;
         padding:7px 15px;
+        text-decoration: none;
+        span{
+            text-decoration: none;
+        }
     }
     li a:hover{
-        background: $white;
+        background: $shade;
     }
+    li:first-child,li:last-child{
+        display: none;
+    }
+    .disabled{
+        display: none;
+    }
+}
+.page-item.active a{
+    color:$grey;
+    background: $shade;
 }
 .pagination-wrapper{
     display: flex;

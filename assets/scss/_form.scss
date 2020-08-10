@@ -1,17 +1,25 @@
-.search-form{
-    order:3;
-    flex-grow: 0;
-}
 input {
-    border: 1px solid $hover-border;
-    padding: 7px;
-    font-family: Roboto, sans-serif;
-    background-color: $hover-bg;
+    border: 2px solid $grey;
+    padding:7px 7px;
+    font-family:Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: $light;
+    border-radius: 4px;
 }
 input:hover{
-    background-color: $white;
+    border-color: $black;
 }
 input:focus{
-    border-color: $accent;
-    background-color: $white;
+    border-color: $grey;
+    background-color: $light;
+}
+button{
+    background: $secondary;
+    border:2px solid transparent;
+    border-radius: 5px;
+    padding:5px 10px;
+    font-family:Montserrat, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    cursor: pointer;
+}
+button:focus{
+    border-color: $shade;
 }

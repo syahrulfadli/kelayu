@@ -1,14 +1,78 @@
 .hero{
-    background: $primary;
-    color:$white;
+    background: $light;
     height: 21vw;
     h1 {
     line-height: normal;
     margin: 0;
+    color:$black;
+    }
+    a{
+        color:$black
+    }
+    h1{
+        font-weight: 700;
+    }
+    @media screen and (max-width:600px){
+        height: 50vw;
     }
 }
 .greet {
-    height: 50vw;
+    height: 21vw;
     display: flex;
     align-items: center;
+    @media screen and (max-width:600px){
+        height: 50vw;
+        margin-left:20px;
+        margin-right: 20px;
+        h1{
+            font-size:14px;
+        }
+    }
+    button{
+        color: $black;
+        font-size:20px;
+    }
+    p{
+        margin-top:0;
+        @media screen and (max-width:800px){
+            font-size:15px;
+        }
+        @media screen and (max-width:480px){
+            font-size:13px;
+        }
+    }
+    h1{
+        @media screen and (max-width:800px){
+        font-size:27px;
+        }
+        @media screen and (max-width:480px){
+            font-size: 21px;
+        }
+    }
+}
+.command::after{
+    content: " ";
+    animation: 4s text infinite;
+}
+@keyframes text{
+    0%{content:"linux"}
+    10%{content:"yang gratis";}
+    15%{content:"open source";}
+    20%{content:"privasi"}
+    25%{content:"kamu";}
+    30%{content:"desktop environment";}
+    35%{content:"terminal";}
+    40%{content:"shell";}
+    45%{content:"ubuntu";}
+    50%{content:"windows";}
+    55%{content:"window manager";}
+    60%{content:"Distro";}
+    65%{content:"ssh";}
+    70%{content:"arch";}
+    75%{content:"android";}
+    80%{content:"software";}
+    85%{content:"sistem operasi";}
+    90%{content:"emacs";}
+    95%{content:"latex";}
+    100%{content:"linux";}
 }

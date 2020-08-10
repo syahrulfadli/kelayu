@@ -13,6 +13,9 @@
     padding:25px 0;
     display: inline-block;
     width: 100%;
+    a{
+        font-weight: 700;
+    }
 }
 .prev{
     float: right;
@@ -21,4 +24,13 @@
 }
 .next{
     width: 50%;
+}
+.TOC {
+    position: sticky;
+    right: 0;
+    top:0;
+    width: 250px;
+    font-size: 17px;
+    float: right;
+    background:$light;
 }
