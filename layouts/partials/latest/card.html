@@ -4,8 +4,8 @@
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                    {{- $image1 := .Fill "400x300 q100" -}}
-                    {{- $image2 := .Fill "200x150 q90" -}}
+                    {{- $image1 := .Fill "245x245 q100" -}}
+                    {{- $image2 := .Fill "200x120 q90" -}}
                     <div class="cover-image">
                         <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
                             <img srcset="
@@ -18,19 +18,7 @@
             {{- end -}}
         {{- end -}}
     <div class="card-wrapper">
-        <div class="stretched">
             <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
-            {{ with .Params.tags }}
-            {{ range . }}
-                <span class="tags">
-                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}" title="{{.}}">{{ . }}</a>
-                </span>
-            {{ end }}
-        {{ end }}
         <h2><a class="linkin" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
-        <p>
-            {{.Params.excerpt}}
-        </p>
-        </div>
     </div>
 </div>

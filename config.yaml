@@ -1,8 +1,4 @@
-pygmentsstyle: 'monokai'
-
-permalinks:
-  post: /:filename/
-  info: /:filename/
+anchor : Center
 
 markup.goldmark.renderer:
   unsafe: true

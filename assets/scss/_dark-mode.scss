@@ -1,0 +1,96 @@
+.dark-mode{
+    background: $black;
+    color: $light;
+    h2 a{
+        color: $light !important;
+    }
+    .brand{
+        color:$white;
+    }
+    .card-meta{
+        a:hover{
+            color:$light;
+        }
+    }
+    .pagination{
+        li a:hover{
+            background: $grey;
+        }
+        li a{
+            color:$white;
+            background: $pitch-black;
+        }
+    }
+    .page-item.active a{
+        color:$black;
+        background: $grey;
+    }
+    .hero{
+        background: $black;
+        color:$light;
+        h1{
+            color:$light;
+        }
+    }
+    kbd{
+        background: $light-black;
+        color:$light;
+    }
+    .tags:hover{
+        a{
+            color:$white;
+        }
+    }
+    .nav-wrapper{
+        ul{
+            li{
+                a:hover{
+                    color:$white;
+                }
+            }
+        }
+    }
+    .footer-wrapper ul li a{
+        color: $light;
+    }
+    .search-toggle:hover{
+        color:$white;
+    }
+    .menuToggle{
+        color:$grey ;
+    }
+    button:focus{
+        color: $white;
+    }
+    code{
+        background: $light-black;
+    }
+    pre code{
+        background: transparent;
+    }
+    .footnotes::before{
+        background: $black;
+    }
+    .footer,.nav-wrapper,.nextprev,.langganan,.footnotes,kbd,blockquote{
+        border-color: $pitch-black;
+    }
+    .darkmode:hover{
+        color: $white;
+    }
+    .unggulan{
+        .more:hover{
+            color:$black;
+        }
+        h4{
+        color: $black;
+        }
+    }
+    .terbaru{
+        span{
+            background: $black;
+        }
+    }
+    .terbaru::before{
+        background: $pitch-black;
+    }
+}

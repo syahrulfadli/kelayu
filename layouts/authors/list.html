@@ -1,6 +1,14 @@
 {{ define "main" }}
 <div class="nav-dummy"></div>
+<header class="hero">
+    <div class="greet wrapper">
+
+  {{ partial "authors/avatar.html" . }}  
+  
+    </div>
+</header>
 <div class="wrapper">
+    <h3>Artikel dari {{ .Title }}</h3>
     <div class="container">
     {{ range .Paginator.Pages }}
         {{- partial "articles/card.html" . -}}

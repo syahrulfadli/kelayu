@@ -9,12 +9,19 @@
 @import 'form';
 @import 'single';
 @import 'header';
+@import 'index';
+@import 'langganan';
+@import 'dark-mode';
+@import 'toggle-dark-mode';
+@import 'authorpage';
+@import 'unggulan';
+@import 'latest';
+@import 'terkait';
 
 body{
     color:$black;
     margin:0;
     font-family: Montserrat, sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
-    background: $light;
 }
 .artikel{
     font-family: 'Playfair Display' 'Times New Roman', Times, serif;

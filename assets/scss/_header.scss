@@ -1,6 +1,6 @@
 .hero{
-    background: $light;
-    height: 21vw;
+    background: $white;
+    min-height: 21vw;
     h1 {
     line-height: normal;
     margin: 0;
@@ -17,9 +17,11 @@
     }
 }
 .greet {
-    height: 21vw;
+    min-height: 21vw;
     display: flex;
     align-items: center;
+    border-bottom: 1px solid $shade;
+    width: 100%;
     @media screen and (max-width:600px){
         height: 50vw;
         margin-left:20px;

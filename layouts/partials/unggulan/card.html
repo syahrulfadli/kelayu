@@ -1,11 +1,13 @@
 {{ $page := . }}
+<div class="unggulan">
+    <h4>Artikel unggulan</h4>
 <div class="card">
     {{- with $page.Params.cover -}}
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                    {{- $image1 := .Fill "400x300 q100" -}}
-                    {{- $image2 := .Fill "200x150 q90" -}}
+                    {{- $image1 := .Fill "800x600 q100" -}}
+                    {{- $image2 := .Fill "400x300 q90" -}}
                     <div class="cover-image">
                         <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
                             <img srcset="
@@ -18,8 +20,6 @@
             {{- end -}}
         {{- end -}}
     <div class="card-wrapper">
-        <div class="stretched">
-            <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
             {{ with .Params.tags }}
             {{ range . }}
                 <span class="tags">
@@ -28,9 +28,16 @@
             {{ end }}
         {{ end }}
         <h2><a class="linkin" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
+        <div class="card-meta">
+            <span>{{ partial "articles/author.html" . }}</span>, <span>{{ .Date.Format "Jan 2, 2006" }}</span>
+        </div>
         <p>
             {{.Params.excerpt}}
         </p>
-        </div>
+
+    <p class="space">
+        <a class="more" title="{{ .Title }}" href="{{ .RelPermalink }}">Baca selengkapnya</a> 
+    </p>  
     </div>
+</div>
 </div>

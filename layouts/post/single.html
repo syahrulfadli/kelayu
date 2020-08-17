@@ -1,10 +1,39 @@
 
 {{ define "main" }}
+{{ $page := . }}
 <div class="single-wrapper">
 <section id="main">
-  <h4 class="date-single weight4"> {{ .Date.Format "Monday January 2, 2006" }} </h4>
+  <div class="cover">
+  <h4 class="date-single weight4"> {{ .Date.Format "January 2, 2006" }} </h4>
   <h1 class="title-single gigantic-title weight3">{{ .Title }}</h1>
   <p class="excerpt">{{ .Params.excerpt }}</p>
+
+<!-- cover image -->
+
+{{- with $page.Params.cover -}}
+            {{- $images := . -}}
+            {{- with $page.Site.GetPage "section" "upload" -}}
+                {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
+                    {{- $image1 := .Resize "560x q100" -}}
+                    {{- $image2 := .Resize "300x q100" -}}
+    
+                    <div class="cover-image-single">
+                      <div class="cover-shade-light" id="shading-light"></div>
+                      <div class="cover-shade-dark" id="shading-dark"></div>
+                        <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
+                            <img srcset="
+                            {{ $image2.RelPermalink }} 600w,
+                            {{ $image1.RelPermalink }} 1000w,  
+                            " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
+                        </a>
+                    </div>
+                {{- end -}}
+            {{- end -}}
+        {{- end -}}
+
+  </div>
+
+  <div class="single-tags">
   {{ with .Params.tags }}
   {{ range . }}
   <span class="tags">
@@ -12,7 +41,8 @@
   </span>
   {{ end }}
   {{ end }}
-  <div class="space"></div>
+  </div>
+
   <div class="card-meta">
   {{ with .Params.series }}
   <ul id="series">
@@ -22,8 +52,9 @@
   </ul>
   {{ end }}
   {{ partial "articles/author.html" . }}
-    <span id="wordcount"> {{ .WordCount }} Words • {{ .ReadingTime }} min read</span>
+    <span id="wordcount"> {{ .WordCount }} kata • {{ .ReadingTime }} menit membaca</span>
   </div>
+  <!-- co author
   <span>
     {{ with .Params.authors }}
       <div class="card-meta co-authors">        
@@ -39,6 +70,8 @@
      </div>
     {{ end }}
   </span>
+-->
+
   <div class="article-wrapper">
         <article class="artikel" id="content">
            {{ .Content }}
@@ -47,10 +80,17 @@
 </section>
 <aside id="meta">
    {{ partial "nextprev/nextprev.html" . }}
+
+   {{ partial "terkait/list.html" . }}
 </aside>
 <aside id="meta">
 
 {{ partial "disqus.html" . }}
+
+<h4 class="terbaru"><span>Artikel terbaru</span></h4>
+{{ partial "latest/list.html" . }}
 </aside>
+
+{{ partial "langganan.html" . }}
 </div>
 {{ end }}

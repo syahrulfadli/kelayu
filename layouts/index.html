@@ -1,15 +1,57 @@
 {{ define "main" }}
-{{ partial "header.html" . }}
-<div class="wrapper">
-<p>Artikel terbaru</p>
-{{ partial "articles/list.html" . }}
-<p style="text-align: center;"><a href="/post" title="artikel lainnya"><button class="more">Lihat artikel lainnya</button></a></p>
 
-<ul>
-    {{ range .Site.Taxonomies.tags.hugo }}
-        <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a></li>
+<div class="wrapper">
+    
+    {{ partial "unggulan/list.html" . }}
+
+    {{ with .Site.GetPage "section" "post" }}
+    <h4 class="terbaru"><span>Artikel terbaru</span></h4>
+<div class="container">
+    {{ range .Paginator.Pages }}
+        {{- partial "articles/card.html" . -}}
     {{ end }}
-</ul>
+    </div>
+    <div class="pagination-wrapper"> 
+        {{ template "_internal/pagination.html" . }}
+        </div>
+    {{ end }}
+ 
+    <!--
+    <div class="utama">
+<p>Ayo bahas topik seru lainnya.</p>
+
+<div class="list-card">
+
+<div class="list">
+    <h4>Review Distro</h4>
+<p>Lihat perbedaan dengan distro lainnya dan kenapa kamu harus pake Distribusi itu.</p>
+<a href="/category/review-distro" title="artikel review distro"><button class="more">Lihat distro</button></a>
+</div>
+
+<div class="list">
+    <h4>Windows & Linux</h4>
+<p>Berita, Tutorial dan hal lain terkait Windows dan Linux.</p>
+<a href="/category/windows-linux" title="artikel tentang windows dan linux"><button class="more">Windows <span> ❤️ </span> Linux</button></a>
+</div>
+
+<div class="list">
+    <h4>Privasi</h4>
+<p>Topik tentang isu privasi pengguna.</p>
+<a href="/category/privasi" title="artikel tentang isu privasi"><button class="more">Baca topik ini</button></a>
+</div>
+
+<div class="list">
+    <h4><kbd>alt</kbd> Software</h4>
+<p>Cari software alternatif yang gratis, yang bisa dipakai dimana aja.</p>
+<a href="/category/software-alternatif" title="artikel tentang software alternatif"><button class="more">Cari Software</button></a>
+</div>
+
+</div>
+
+</div>
+-->
+
+{{ partial "langganan.html" . }}
 
 </div>
 {{ end }}

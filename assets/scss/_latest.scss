@@ -1,0 +1,14 @@
+.latest-widget{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    .card-wrapper{
+        padding:0 15px;
+        h2{
+            font-size: 18px;
+        }
+    }
+    @media screen and (max-width:600px){
+        column-gap: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+}

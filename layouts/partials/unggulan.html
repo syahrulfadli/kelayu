@@ -1,0 +1,7 @@
+<div class="unggulan">
+    <div class="container">
+        {{ range ( where .Site.RegularPages "tipe" "unggulan" )}}
+            {{- partial "articles/card.html" . -}}
+        {{ end }}
+        </div>
+</div>

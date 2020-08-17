@@ -1,0 +1,50 @@
+.unggulan{
+    margin-top: 35px;
+    width: 100%;
+    position: relative;
+    h4{
+        left: 0;
+        left: 0;
+        background: $primary;
+        margin:0;
+        padding: 5px 15px;
+        display: inline-block
+    }
+    .card{
+        display: flex;
+    }
+    .cover-image{
+        line-height: 0;
+        width: 45%;
+        @media screen and (max-width:800px){
+            width: 100%;
+            opacity: .5;
+            z-index: -1;
+            position: absolute;
+        }
+    }
+    .card-wrapper{
+        h2{
+            font-size: 37px;
+            line-height: 41px;
+            margin-bottom: 10px;
+        }
+        p{
+            font-size: 18px;
+            line-height: 21px;
+        }
+    }
+    .card:hover{
+        box-shadow: none;
+    }
+    .more{
+        color:$accent;
+        border-radius: 4px;
+        position: relative;
+        transition:$tr-normal;
+    }
+    .more:hover{
+        background:$accent;
+        color: $light;
+    }
+}

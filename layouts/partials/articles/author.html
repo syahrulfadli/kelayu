@@ -6,7 +6,7 @@
                         {{- $images := . -}}
                         {{- with $page.Site.GetPage "section" "upload" -}}
                             {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                                {{- $image := .Resize "40x40" -}}
+                                {{- $image := .Resize "50x50 q100" -}}
     
                                         <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}" title="{{ with $page.Params.authors }}{{ range . }}{{ . }} {{ end }}{{ end }}">
                         

@@ -1,0 +1,7 @@
+<div class="latest-widget">
+    {{ with .Site.GetPage "section" "post" }}
+    {{ range first 4 .Pages.ByDate.Reverse }}
+    {{ partial "latest/card.html" . }}
+    {{ end }}
+    {{ end }}
+</div>

@@ -1,0 +1,12 @@
+.terkait-widget{
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    column-gap: 50px;
+    column-width: 200px;
+    margin: 0 auto;
+    width: auto;
+    @media screen and (max-width:600px){
+        column-gap: 10px;
+        grid-template-columns: repeat(1,1fr);
+    }
+}

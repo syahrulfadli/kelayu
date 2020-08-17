@@ -1,0 +1,17 @@
+.avatar{
+    margin:20px auto;
+    text-align: center;
+}
+.avatar-img{
+    img{
+    border-radius: 100%;
+    width: 100%;
+    max-width: 160px;
+    box-shadow: $shadow-lg;
+    }
+}
+.author-bio{
+    max-width:600px;
+    font-size: 17px;
+    line-height: 20px;;
+}
