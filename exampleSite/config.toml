@@ -1,0 +1,70 @@
+baseURL = "kelayu-theme.netlify.app"
+languageCode = "id-ID"
+title = "sudo"
+theme = "kelayu"
+
+paginate = "6"
+
+pygmentsstyle = "dracula"
+
+# disqus short name
+disqusShortname = "sudo-id"
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[permalinks]
+  post = "/:filename/"
+
+[taxonomies]
+tag = "tags"
+author = "authors"
+series = "series" 
+
+[menu]
+  [[menu.main]]
+    identifier = "editorial"
+    name = "Editorial"
+    url = "/series/editorial/"
+    weight = 1
+    [[menu.main]]
+    identifier = "tutorial"
+    name = "Tutorial"
+    url = "/category/tutorial/"
+    weight = 2
+    [[menu.main]]
+    identifier = "berita"
+    name = "Berita"
+    url = "/category/berita/"
+    weight = 3
+    [[menu.main]]
+    identifier = "ebook"
+    name = "Ebook"
+    url = "/category/ebook/"
+    weight = 4
+
+    [[menu.bottom]]
+    identifier = "tentang"
+    name = "Tentang"
+    url = "/about/"
+    weight = 1
+    [[menu.bottom]]
+    identifier = "privasi"
+    name = "Privasi"
+    url = "/privacy/"
+    weight = 2
+    [[menu.bottom]]
+    identifier = "penolakan"
+    name = "Penolakan"
+    url = "/disclaimer/"
+    weight = 3
+    [[menu.bottom]]
+    identifier = "kontak"
+    name = "Kontak"
+    url = "/contact/"
+    weight = 4
+    [[menu.bottom]]
+    identifier = "arsip"
+    name = "Arsip"
+    url = "/arsip/"
+    weight = 5
