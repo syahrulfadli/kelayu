@@ -1,8 +1,9 @@
 
 {{ define "main" }}
 {{ $page := . }}
+{{ partial "sharebutton/index.html" . }}
 <div class="single-wrapper">
-<section id="main">
+<section id="main" class="serif">
   <div class="cover">
   <h4 class="date-single weight4"> {{ .Date.Format "January 2, 2006" }} </h4>
   <h1 class="title-single gigantic-title weight3">{{ .Title }}</h1>
@@ -73,24 +74,20 @@
 -->
 
   <div class="article-wrapper">
-        <article class="artikel" id="content">
+        <article id="content">
            {{ .Content }}
         </article>
   </div>
 </section>
 <aside id="meta">
    {{ partial "nextprev/nextprev.html" . }}
-
-   {{ partial "terkait/list.html" . }}
 </aside>
 <aside id="meta">
 
 {{ partial "disqus.html" . }}
 
-<h4 class="terbaru"><span>Artikel terbaru</span></h4>
-{{ partial "latest/list.html" . }}
+{{ partial "terkait/list.html" . }}
 </aside>
-
 {{ partial "langganan.html" . }}
 </div>
 {{ end }}

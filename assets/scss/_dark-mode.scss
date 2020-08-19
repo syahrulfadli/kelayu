@@ -65,6 +65,11 @@
     code{
         background: $light-black;
     }
+    a{
+        code{
+            color:$light;
+        }
+    }
     pre code{
         background: transparent;
     }
@@ -92,5 +97,14 @@
     }
     .terbaru::before{
         background: $pitch-black;
+    }
+    pre{
+        background:$pitch-black !important;
+    }
+    .sharebutton{
+        background: $black;
+        .judul{
+            background: $light-black;
+        }
     }
 }

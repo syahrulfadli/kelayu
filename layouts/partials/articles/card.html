@@ -8,7 +8,7 @@
                     {{- $image2 := .Fill "200x150 q90" -}}
                     <div class="cover-image">
                         <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
-                            <img srcset="
+                            <img loading="lazy" srcset="
                             {{ $image2.RelPermalink }} 800w,
                             {{ $image1.RelPermalink }} 1366w,  
                             " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>

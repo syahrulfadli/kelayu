@@ -17,13 +17,14 @@
 @import 'unggulan';
 @import 'latest';
 @import 'terkait';
+@import 'sharebutton';
 
 body{
     color:$black;
     margin:0;
     font-family: Montserrat, sans-serif, 'Segoe UI', Tahoma, Geneva, Verdana;
 }
-.artikel{
+.serif{
     font-family: 'Playfair Display' 'Times New Roman', Times, serif;
 }
 a{
