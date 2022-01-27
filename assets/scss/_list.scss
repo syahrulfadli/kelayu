@@ -22,6 +22,7 @@
     overflow: hidden;
     transition: $tr-normal;
     position: relative;
+    box-shadow: $shadow-md;
     @media screen and  (max-width:1200px){
         margin: 0 35px;
     }

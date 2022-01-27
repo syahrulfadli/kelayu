@@ -2,11 +2,11 @@
 {{ define "main" }}
 {{ $page := . }}
 {{ partial "sharebutton/index.html" . }}
-<div class="single-wrapper">
-<section id="main" class="serif">
+<div class="single-wrapper  mx-auto w-full md:w-2/3 mt-12">
+<section id="main" class="bg-white dark:bg-slate-900 p-8 rounded-lg shadow-md">
   <div class="cover">
-  <h4 class="date-single weight4"> {{ .Date.Format "January 2, 2006" }} </h4>
-  <h1 class="title-single gigantic-title weight3">{{ .Title }}</h1>
+  <h4 class="date-single font-bold text-gray-500"> {{ .Date.Format "January 2, 2006" }} </h4>
+  <h1 class="title-single text-2xl md:text-4xl font-extrabold my-6">{{ .Title }}</h1>
   <p class="excerpt">{{ .Params.excerpt }}</p>
 
 <!-- cover image -->
@@ -19,10 +19,8 @@
                     {{- $image2 := .Resize "300x q100" -}}
     
                     <div class="cover-image-single">
-                      <div class="cover-shade-light" id="shading-light"></div>
-                      <div class="cover-shade-dark" id="shading-dark"></div>
                         <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
-                            <img srcset="
+                            <img class="mx-auto my-6 rounded-lg shadow-md" srcset="
                             {{ $image2.RelPermalink }} 600w,
                             {{ $image1.RelPermalink }} 1000w,  
                             " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
@@ -34,17 +32,17 @@
 
   </div>
 
-  <div class="single-tags">
+  <div class="single-tags mb-6">
   {{ with .Params.tags }}
   {{ range . }}
   <span class="tags">
-  <a href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
+  <a class="rounded-lg p-1 px-3 mr-1 bg-gray-200 dark:bg-gray-700 dark:hover:bg-gray-800 dark:text-gray-100 text-sm hover:bg-gray-300" href="{{ "tags" | absURL }}/{{ . | urlize }}">{{ . }}</a>
   </span>
   {{ end }}
   {{ end }}
   </div>
 
-  <div class="card-meta">
+  <div class="card-meta mb-6 font-bold text-gray-700 dark:text-gray-400">
   {{ with .Params.series }}
   <ul id="series">
     {{ range . }}
@@ -52,8 +50,8 @@
     {{ end }}
   </ul>
   {{ end }}
-  {{ partial "articles/author.html" . }}
-    <span id="wordcount"> {{ .WordCount }} kata • {{ .ReadingTime }} menit membaca</span>
+      {{ partial "articles/author.html" . }}
+    <span id="wordcount" class="text-gray-700 ml-6 text-right dark:text-gray-400"> {{ .WordCount }} kata • {{ .ReadingTime }} menit membaca</span>
   </div>
   <!-- co author
   <span>
@@ -74,7 +72,7 @@
 -->
 
   <div class="article-wrapper">
-        <article id="content">
+        <article id="content" class="max-w-full prose dark:prose-invert md:prose-lg">
            {{ .Content }}
         </article>
   </div>

@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="nav-dummy"></div>
-<div class="wrapper">
-    <div class="container">
+<div class="wrapper mt-12">
+    <div class="grid grid-cols-3 gap-4">
     {{ range .Paginator.Pages }}
         {{- partial "articles/card.html" . -}}
     {{ end }}

@@ -1,5 +1,5 @@
 {{ $page := . }}
-<div class="card">
+<div class="card bg-white dark:bg-slate-900 rounded-lg p-4 shadow-md">
     {{- with $page.Params.cover -}}
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
@@ -8,7 +8,7 @@
                     {{- $image2 := .Fill "230x100 q50" -}}
                     <div class="cover-image">
                         <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
-                            <img loading="lazy" srcset="
+                            <img class="rounded-md" loading="lazy" srcset="
                             {{ $image2.RelPermalink }} 800w,
                             {{ $image1.RelPermalink }} 1366w,  
                             " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
@@ -17,8 +17,8 @@
                 {{- end -}}
             {{- end -}}
         {{- end -}}
-    <div class="card-wrapper">
+    <div class="card-wrapper p-4 pb-0">
             <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
-        <h2><a class="linkin" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
+        <h2 class="font-bold"><a class="linkin" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
     </div>
 </div>

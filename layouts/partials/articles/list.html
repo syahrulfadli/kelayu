@@ -1,4 +1,4 @@
-<div class="container">
+<div class="grid grid-cols-3 gap4-">
     {{ with .Site.GetPage "section" "post" }}
     {{ range .Paginator.Pages }}
         {{- partial "articles/card.html" . -}}

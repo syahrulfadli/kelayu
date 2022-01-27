@@ -1,18 +1,18 @@
 {{ define "main" }}
 
 <div class="wrapper">
-    
+    <!--{{ partial "course/course.html" . }}-->
     {{ partial "unggulan/list.html" . }}
 
     {{ with .Site.GetPage "section" "post" }}
-    <h4 class="terbaru"><span>Artikel terbaru</span></h4>
-<div class="container">
-    {{ range .Paginator.Pages }}
+    <h4 class="terbaru text-2xl font-bold my-2 dark:text-gray-100 mx-4"><span>Artikel terbaru</span></h4>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mx-4 md:mx-0">
+    {{ range first 3 .Pages }}
         {{- partial "articles/card.html" . -}}
     {{ end }}
     </div>
-    <div class="pagination-wrapper"> 
-        {{ template "_internal/pagination.html" . }}
+    <div class="load-more text-center mt-8"> 
+        <a class="font-bold px-6 py-3 bg-blue-400 dark:bg-blue-800 hover:bg-blue-300 dark:hover:bg-blue-700 rounded-3xl ring-0 focus:ring-4 focus:ring-blue-200 transition-all" href="/post" title="Lainnya">Lainnya...</a>
         </div>
     {{ end }}
  

@@ -1,9 +1,9 @@
 {{ define "main" }}
-<div class="single-wrapper">
-<section id="main">
-  <h1 id="title">{{ .Title }}</h1>
-  <section>
-    <h4 id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
+<div class="single-wrapper bg-white dark:bg-slate-900 rounded-lg shadow-md mt-12 mx-auto w-full md:w-2/3">
+<section id="main" class="p-8">
+  <h1 class="text-2xl font-bold mb-6" id="title">{{ .Title }}</h1>
+  <section class="flex gap-5 mb-6 text-gray-500 font-bold ">
+    <h4 class="" id="date"> {{ .Date.Format "Mon Jan 2, 2006" }} </h4>
     <h5 id="wordcount"> {{ .WordCount }} Words </h5>
   </section>
   {{ with .Params.topics }}
@@ -14,7 +14,7 @@
   </ul>
   {{ end }}
   <div>
-        <article id="content">
+        <article id="content" class="max-w-full prose prose-lg dark:prose-invert">
            {{ .Content }}
         </article>
   </div>

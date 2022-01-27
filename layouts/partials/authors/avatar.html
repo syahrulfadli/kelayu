@@ -1,20 +1,22 @@
 {{ $page := . }}
-    <div class="avatar">
+    <div class="avatar container mx-auto mt-12 bg-white dark:bg-slate-900 rounded-lg shadow-md w-max ">
+        <section class="p-8">
         {{ with .Params.avatar }}
-            <div class="avatar-img">
+            <div class="avatar-img mx-auto w-max">
                 
                 {{- $images := . -}}
                         {{- with $page.Site.GetPage "section" "upload" -}}
                             {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
                                 {{- $image := .Resize "160x" -}}
     
-                                        <img data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
+                                        <img class="rounded-full" data-src="{{ $image.RelPermalink }}" src="{{ $image.RelPermalink }}">
                 
                             {{- end -}}
                         {{- end -}}
 
             </div>
         {{ end }}
-        <h1 class="author-name">{{ .Title }}</h1>
-        <p class="author-bio">{{ .Params.bio }}</p>
+        <h1 class="author-name text-center text-3xl font-semibold my-4">{{ .Title }}</h1>
+        <p class="author-bio text-center text-gray-400">{{ .Params.bio }}</p>
+        </section>
     </div>

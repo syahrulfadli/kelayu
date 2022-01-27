@@ -1,14 +1,14 @@
-<div class="nextprev">
+<div class="nextprev flex grid-cols-2 gap-8">
     {{ with .PrevInSection }}
-    <div class="prev">
-    <span>Artikel sebelumnya</span>
+    <div class="prev bg-white dark:bg-slate-900 my-8 rounded-lg p-8 basis-1/2 shadow-md">
+    <span class="text-xl font-bold">Artikel sebelumnya</span>
     <br/>
       <a class="previous" href="{{.Permalink}}"> {{.Title}}</a>
       </div>
     {{ end }}
     {{ with .NextInSection }}
-    <div class="next">
-    <span>Artikel selanjutnya</span>
+    <div class="next bg-white dark:bg-slate-900 my-8 rounded-lg p-8 basis-1/2 shadow-md text-right">
+    <span class="text-lg font-bold">Artikel selanjutnya</span>
     <br/>
       <a class="next" href="{{.Permalink}}"> {{.Title}}</a>
       </div>

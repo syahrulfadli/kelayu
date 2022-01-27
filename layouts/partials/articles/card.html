@@ -1,14 +1,14 @@
 {{ $page := . }}
-<div class="card">
+<div class="card p-2 bg-white dark:bg-slate-900 dark:text-gray-100 rounded-xl shadow-md hover:shadow-lg transition-all relative overflow-hidden cursor-pointer" onclick="location.href='{{ $page.RelPermalink }}'">
     {{- with $page.Params.cover -}}
             {{- $images := . -}}
             {{- with $page.Site.GetPage "section" "upload" -}}
                 {{- with .Resources.GetMatch (strings.TrimPrefix "/upload/" (index $images 0)) -}}
-                    {{- $image1 := .Fill "400x300 q100" -}}
-                    {{- $image2 := .Fill "200x150 q90" -}}
-                    <div class="cover-image">
+                    {{- $image1 := .Fill "400x225 q100" -}}
+                    {{- $image2 := .Fill "200x122 q90" -}}
+                    <div class="cover-image  rounded-lg overflow-hidden">
                         <a href="{{ $page.RelPermalink }}" title="{{ $page.Title }}">
-                            <img loading="lazy" srcset="
+                            <img class="w-full" loading="border border-gray-200
                             {{ $image2.RelPermalink }} 800w,
                             {{ $image1.RelPermalink }} 1366w,  
                             " src="{{ $image1.RelPermalink }}" alt="{{ $page.Title }}"/>
@@ -17,20 +17,18 @@
                 {{- end -}}
             {{- end -}}
         {{- end -}}
-    <div class="card-wrapper">
-        <div class="stretched">
+    <div class="card-wrapper container p-6 group-hover:shadow-lg">
             <a href="{{ $page.RelPermalink }}" class="link" title="{{.Title}}"></a>
             {{ with .Params.tags }}
             {{ range . }}
                 <span class="tags">
-                    <a href="{{ "tags" | absURL }}/{{ . | urlize }}" title="{{.}}">{{ . }}</a>
+                    <a class="py-1 px-3 bg-gray-200 dark:bg-gray-700 hover:dark:bg-gray-800 dark:text-gray-100 hover:bg-gray-300 text-xs rounded-md" href="{{ "tags" | absURL }}/{{ . | urlize }}" title="{{.}}">{{ . }}</a>
                 </span>
             {{ end }}
         {{ end }}
-        <h2><a class="linkin" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
+        <h2 class="my-2"><a class="linkin font-bold text-xl md:text-2xl" href="{{.RelPermalink}}" title="{{.Title}}">{{.Title}}</a></h2>
         <p>
             {{.Params.excerpt}}
         </p>
-        </div>
     </div>
 </div>

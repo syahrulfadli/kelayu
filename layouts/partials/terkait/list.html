@@ -1,8 +1,8 @@
 
 {{ $page := .Site.RegularPages.Related . | first 4 }}
 {{ with $page }}
-<h4 class="terkait">Artikel terkait</h4>
-<div class="terkait-widget">
+<h4 class="terkait text-xl font-bold mb-4">Artikel terkait</h4>
+<div class="terkait-widget flex gap-8 grid-cols-4">
     {{ range . }}
     {{ partial "terkait/card.html" . }}
     {{ end }}
